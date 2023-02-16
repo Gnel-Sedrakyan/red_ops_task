@@ -21,3 +21,10 @@ Either<ValueFailure<String>, String> validateNotEmpty(String input) {
   }
   return left(ValueFailure.negative(failedValue: input));
 }
+
+Either<ValueFailure<T?>, T> validateNotNull<T>(T? input) {
+  if (input != null) {
+    return right(input);
+  }
+  return left(ValueFailure.isNull(failedValue: input));
+}

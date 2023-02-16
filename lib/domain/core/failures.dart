@@ -10,4 +10,7 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.negative({
     required T failedValue,
   }) = Negative<T>;
+  const factory ValueFailure.isNull({
+    required T failedValue,
+  }) = IsNull<T>;
 }

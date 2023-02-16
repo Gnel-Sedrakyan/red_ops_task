@@ -1,35 +1,44 @@
 import 'package:red_ops_task/domain/core/entity.dart';
 import 'package:red_ops_task/domain/core/value_objects.dart';
+import 'package:red_ops_task/domain/user/value_objects.dart';
 
 class User implements IEntity {
   @override
   final UniqueId id;
-  final String name;
-  final String logo;
-  final String image;
-  final String location;
+  final Name name;
+  final Name lastName;
+  final String email;
+  final PhoneNumber phoneNumber;
+  final ActivationDate activationDate;
+  final UserStatus status;
 
   User({
     required this.id,
     required this.name,
-    required this.logo,
-    required this.image,
-    required this.location,
+    required this.lastName,
+    required this.email,
+    required this.phoneNumber,
+    required this.activationDate,
+    required this.status,
   });
 
   User copyWith({
     UniqueId? id,
-    String? name,
-    String? logo,
-    String? image,
-    String? location,
+    Name? name,
+    Name? lastName,
+    String? email,
+    PhoneNumber? phoneNumber,
+    ActivationDate? activationDate,
+    UserStatus? status,
   }) {
     return User(
       id: id ?? this.id,
       name: name ?? this.name,
-      logo: logo ?? this.logo,
-      image: image ?? this.image,
-      location: location ?? this.location,
+      lastName: lastName ?? this.lastName,
+      email: email ?? this.email,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      activationDate: activationDate ?? this.activationDate,
+      status: status ?? this.status,
     );
   }
 
@@ -44,9 +53,11 @@ class User implements IEntity {
   int get hashCode =>
       id.hashCode ^
       name.hashCode ^
-      logo.hashCode ^
-      image.hashCode ^
-      location.hashCode;
+      lastName.hashCode ^
+      email.hashCode ^
+      phoneNumber.hashCode ^
+      activationDate.hashCode ^
+      status.hashCode;
 
   @override
   String toString() => 'User:$name';

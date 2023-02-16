@@ -21,18 +21,21 @@ mixin _$ValueFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) negative,
+    required TResult Function(T failedValue) isNull,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +43,21 @@ mixin _$ValueFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(Negative<T> value) negative,
+    required TResult Function(IsNull<T> value) isNull,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -161,6 +167,7 @@ class _$Multiline<T> implements Multiline<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) negative,
+    required TResult Function(T failedValue) isNull,
   }) {
     return multiline(failedValue);
   }
@@ -170,6 +177,7 @@ class _$Multiline<T> implements Multiline<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
   }) {
     return multiline?.call(failedValue);
   }
@@ -179,6 +187,7 @@ class _$Multiline<T> implements Multiline<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -192,6 +201,7 @@ class _$Multiline<T> implements Multiline<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(Negative<T> value) negative,
+    required TResult Function(IsNull<T> value) isNull,
   }) {
     return multiline(this);
   }
@@ -201,6 +211,7 @@ class _$Multiline<T> implements Multiline<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
   }) {
     return multiline?.call(this);
   }
@@ -210,6 +221,7 @@ class _$Multiline<T> implements Multiline<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
     required TResult orElse(),
   }) {
     if (multiline != null) {
@@ -300,6 +312,7 @@ class _$Negative<T> implements Negative<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) multiline,
     required TResult Function(T failedValue) negative,
+    required TResult Function(T failedValue) isNull,
   }) {
     return negative(failedValue);
   }
@@ -309,6 +322,7 @@ class _$Negative<T> implements Negative<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
   }) {
     return negative?.call(failedValue);
   }
@@ -318,6 +332,7 @@ class _$Negative<T> implements Negative<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? multiline,
     TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
     required TResult orElse(),
   }) {
     if (negative != null) {
@@ -331,6 +346,7 @@ class _$Negative<T> implements Negative<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(Multiline<T> value) multiline,
     required TResult Function(Negative<T> value) negative,
+    required TResult Function(IsNull<T> value) isNull,
   }) {
     return negative(this);
   }
@@ -340,6 +356,7 @@ class _$Negative<T> implements Negative<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
   }) {
     return negative?.call(this);
   }
@@ -349,6 +366,7 @@ class _$Negative<T> implements Negative<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Multiline<T> value)? multiline,
     TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
     required TResult orElse(),
   }) {
     if (negative != null) {
@@ -366,5 +384,149 @@ abstract class Negative<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$NegativeCopyWith<T, _$Negative<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$IsNullCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$IsNullCopyWith(
+          _$IsNull<T> value, $Res Function(_$IsNull<T>) then) =
+      __$$IsNullCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$IsNullCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$IsNullCopyWith<T, $Res> {
+  __$$IsNullCopyWithImpl(_$IsNull<T> _value, $Res Function(_$IsNull<T>) _then)
+      : super(_value, (v) => _then(v as _$IsNull<T>));
+
+  @override
+  _$IsNull<T> get _value => super._value as _$IsNull<T>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$IsNull<T>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IsNull<T> implements IsNull<T> {
+  const _$IsNull({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.isNull(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$IsNull<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$IsNullCopyWith<T, _$IsNull<T>> get copyWith =>
+      __$$IsNullCopyWithImpl<T, _$IsNull<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) multiline,
+    required TResult Function(T failedValue) negative,
+    required TResult Function(T failedValue) isNull,
+  }) {
+    return isNull(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
+  }) {
+    return isNull?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? multiline,
+    TResult Function(T failedValue)? negative,
+    TResult Function(T failedValue)? isNull,
+    required TResult orElse(),
+  }) {
+    if (isNull != null) {
+      return isNull(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Multiline<T> value) multiline,
+    required TResult Function(Negative<T> value) negative,
+    required TResult Function(IsNull<T> value) isNull,
+  }) {
+    return isNull(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
+  }) {
+    return isNull?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Multiline<T> value)? multiline,
+    TResult Function(Negative<T> value)? negative,
+    TResult Function(IsNull<T> value)? isNull,
+    required TResult orElse(),
+  }) {
+    if (isNull != null) {
+      return isNull(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IsNull<T> implements ValueFailure<T> {
+  const factory IsNull({required final T failedValue}) = _$IsNull<T>;
+
+  @override
+  T get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$IsNullCopyWith<T, _$IsNull<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -50,8 +50,8 @@ _i1.GetIt $initGetIt(
       _test,
     },
   );
-  gh.lazySingleton<_i9.IUserRepository>(
-      () => _i10.UserRepository(userRemoteDataSource: get<dynamic>()));
+  gh.lazySingleton<_i9.IUserRepository>(() => _i10.UserRepository(
+      userRemoteDataSource: get<_i6.IUserRemoteDataSource>()));
   gh.factory<_i11.UserListState>(() => _i11.UserListState.loading());
   gh.factory<_i11.ProductListBloc>(() => _i11.ProductListBloc(
         get<_i11.UserListState>(),

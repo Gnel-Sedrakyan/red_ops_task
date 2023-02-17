@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
 
 abstract class IHttpNetworkApi {
-  Future<http.Response> get(String url);
+  Future<http.Response> get(String url, {Map<String, dynamic>? query});
 }

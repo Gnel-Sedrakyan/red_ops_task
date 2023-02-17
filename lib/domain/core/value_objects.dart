@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import 'package:uuid/uuid.dart';
 import 'package:red_ops_task/domain/core/common_interfaces.dart';
 import 'package:red_ops_task/domain/core/errors.dart';
 import 'package:red_ops_task/domain/core/failures.dart';
-import 'package:red_ops_task/domain/core/value_validators.dart';
 
 @immutable
 abstract class ValueObject<T> implements IValidatable {
